@@ -11,7 +11,8 @@ RUN apt update  && apt install -y \
 
 # COPY named.conf.options /etc/bind/named.conf.options
 RUN mkdir -p /dns
-COPY entrypoint.sh /dns
+
+COPY entrypoint.sh /dns/entrypoint.sh
 RUN chmod a+x /dns/entrypoint.sh
 EXPOSE 53
 # USER bind
